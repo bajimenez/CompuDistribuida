@@ -1,0 +1,2 @@
+# CompuDistribuida
+Coeficiente Jaccard Tanimoto
