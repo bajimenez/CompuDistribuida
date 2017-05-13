@@ -19,6 +19,8 @@ public class Main {
 
         System.out.print("\nEl coeficiente es:");
         System.out.print(completeTanimoto(datos,datos2,cadena1,cadena2,result,result2));
+
+        Data dat = new Data();
     }
 
     public static int comprobar (String cadena1,String cadena2){
