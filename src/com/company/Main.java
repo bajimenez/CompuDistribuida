@@ -1,6 +1,8 @@
 package com.company;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
+
 
 public class Main {
     public static ArrayList<String>datos;
@@ -8,36 +10,17 @@ public class Main {
     public static ArrayList<Elements>result;
     public static ArrayList<Elements>result2;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         int Na,Nb,Nc;
-
         String cadena1="CCCCCC(=O)O[C@@H]1[C@@H](OC(=O)/C(=C\\C)/C)C(=C2[C@H]1[C@@](C)(OC(=O)C)C[C@@H]([C@]1([C@H]2OC(=O)[C@@]1(C)O)O)OC(=O)CCC)C";
         String cadena2="CCCCCCCC(=O)O[C@@H]1[C@@H](OC(=O)/C(=C\\C)/C)C(=C2[C@H]1[C@@](C)(OC(=O)C)C[C@@H]([C@]1([C@H]2OC(=O)[C@@]1(C)O)O)OC(=O)CCC)C";
-        datos = new ArrayList<String>();
-        datos2 = new ArrayList<String>();
 
-        elementos(cadena1, datos);
-        result = new ArrayList<Elements>();
-        counting(cadena1,datos,result);
-        Na = numberElements(result);
-        System.out.print("El numero de elementos de la cadena1 es: " + Na);
-        System.out.print("\n");
-        print(result);
+        //Datos inf = new Datos();
 
-        elementos(cadena2, datos2);
-        result2 = new ArrayList<Elements>();
-        counting(cadena2,datos2,result2);
-        Nb = numberElements(result2);
-        System.out.print("El numero de elementos de la cadena2 es: " + Nb);
-        System.out.print("\n");
-        print(result2);
+        System.out.print("\nEl coeficiente es:");
 
-        Nc = common(result, result2);
-        System.out.print("\n Los elementos comunes son: " + Nc);
 
-        System.out.print("\nEl coeficiente es:"+ tanimoto(Na,Nb,Nc));
 
-        
     }
 
     public static int comprobar (String cadena1,String cadena2){
@@ -120,6 +103,27 @@ public class Main {
             }
         }
         return a;
+    }
+            ,ArrayList<Elements>result,ArrayList<Elements>result2){
+        int Na,Nb,Nc;
+        float total;
+        datos = new ArrayList<String>();
+        datos2 = new ArrayList<String>();
+
+        elementos(cadena1, datos);
+        result = new ArrayList<Elements>();
+        counting(cadena1,datos,result);
+        Na = numberElements(result);
+        elementos(cadena2, datos2);
+        result2 = new ArrayList<Elements>();
+        counting(cadena2,datos2,result2);
+        Nb = numberElements(result2);
+        Nc = common(result, result2);
+        total=tanimoto(Na,Nb,Nc);
+
+
+
+        return total;
     }
 }
 
