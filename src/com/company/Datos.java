@@ -11,17 +11,18 @@ import javax.swing.JOptionPane;
 
 public class Datos
 {
-
+    String [] arreglo= new String[15000];
+    String [] arreglo1= new String[15000];
+    String [] arreglo2= new String[15000];
+    String [] arreglo3= new String[15000];
+    String datos ="";
+    int i=0;
+    int j=0;
+    int k=0;
+    int l=0;
     public Datos() throws FileNotFoundException {
-        String [] arreglo= new String[15000];
-        String [] arreglo1= new String[15000];
-        String [] arreglo2= new String[15000];
-        String [] arreglo3= new String[15000];
-        String datos ="";
-        int i=0;
-        int j=0;
-        int k=0;
-        int l=0;
+
+
         File fe = new File("ZINC_chemicals.tsv");
         BufferedReader entrada = new BufferedReader(new FileReader(fe));
         try {
@@ -32,7 +33,7 @@ public class Datos
                 arreglo[i]= tokens.nextToken();
                 arreglo1[j]=tokens.nextToken();
                 arreglo2[k]=tokens.nextToken();
-                arreglo3[k]=tokens.nextToken();
+                arreglo3[l]=tokens.nextToken();
                 System.out.println("arreglo: "+arreglo[i]);
                 //System.out.println("arreglo2"+arreglo1[j]);
                 //System.out.println("arreglo3"+arreglo2[k]);
@@ -48,6 +49,44 @@ public class Datos
         }
 
     }
+    public String[] getArreglo() {
+        return arreglo;
+    }
 
+    public void setArreglo(String[] arreglo) {
+        this.arreglo = arreglo;
+    }
+
+    public String[] getArreglo1() {
+        return arreglo1;
+    }
+
+    public void setArreglo1(String[] arreglo1) {
+        this.arreglo1 = arreglo1;
+    }
+
+    public String[] getArreglo2() {
+        return arreglo2;
+    }
+
+    public void setArreglo2(String[] arreglo2) {
+        this.arreglo2 = arreglo2;
+    }
+
+    public String[] getArreglo3() {
+        return arreglo3;
+    }
+
+    public void setArreglo3(String[] arreglo3) {
+        this.arreglo3 = arreglo3;
+    }
+
+    public String getDatos() {
+        return datos;
+    }
+
+    public void setDatos(String datos) {
+        this.datos = datos;
+    }
 
 }
