@@ -14,7 +14,7 @@ public class Main {
         int Na,Nb,Nc;
         String cadena1="CCCCCC(=O)O[C@@H]1[C@@H](OC(=O)/C(=C\\C)/C)C(=C2[C@H]1[C@@](C)(OC(=O)C)C[C@@H]([C@]1([C@H]2OC(=O)[C@@]1(C)O)O)OC(=O)CCC)C";
         String cadena2="CCCCCCCC(=O)O[C@@H]1[C@@H](OC(=O)/C(=C\\C)/C)C(=C2[C@H]1[C@@](C)(OC(=O)C)C[C@@H]([C@]1([C@H]2OC(=O)[C@@]1(C)O)O)OC(=O)CCC)C";
-
+        
 
 
         System.out.print("\nEl coeficiente es:");
