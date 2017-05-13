@@ -36,6 +36,8 @@ public class Main {
         System.out.print("\n Los elementos comunes son: " + Nc);
 
         System.out.print("\nEl coeficiente es:"+ tanimoto(Na,Nb,Nc));
+
+        
     }
 
     public static int comprobar (String cadena1,String cadena2){
