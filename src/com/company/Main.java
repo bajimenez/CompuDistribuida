@@ -18,6 +18,7 @@ public class Main {
         //Datos inf = new Datos();
 
         System.out.print("\nEl coeficiente es:");
+        System.out.print(completeTanimoto(datos,datos2,cadena1,cadena2,result,result2));
 
 
 
@@ -104,6 +105,7 @@ public class Main {
         }
         return a;
     }
+    public static float completeTanimoto (ArrayList<String >datos,ArrayList<String>datos2,String cadena1, String cadena2
             ,ArrayList<Elements>result,ArrayList<Elements>result2){
         int Na,Nb,Nc;
         float total;
