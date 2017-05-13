@@ -44,4 +44,12 @@ public class Data
             Logger.getLogger(Data.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public ArrayList<Chemicals> getAlldata() {
+        return alldata;
+    }
+
+    public void setAlldata(ArrayList<Chemicals> alldata) {
+        this.alldata = alldata;
+    }
 }
