@@ -19,9 +19,6 @@ public class Main {
 
         System.out.print("\nEl coeficiente es:");
         System.out.print(completeTanimoto(datos,datos2,cadena1,cadena2,result,result2));
-
-
-
     }
 
     public static int comprobar (String cadena1,String cadena2){
@@ -123,10 +120,10 @@ public class Main {
         Nc = common(result, result2);
         total=tanimoto(Na,Nb,Nc);
 
-
-
         return total;
     }
+
+    public void
 }
 
 
