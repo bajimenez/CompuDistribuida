@@ -1,6 +1,6 @@
 package com.company;
 
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -38,10 +38,25 @@ public class Tanimoto {
         }
     }
 
-    public static void prinTable() {
+    public static void printTable() {
         for(int i=0; i<finaltable.size(); i++) {
             System.out.print(finaltable.get(i).getIndex() + "\t" + finaltable.get(i).getid1() + "\t" + finaltable.get(i).getid2() + "\t" + finaltable.get(i).getcoefftanimoto() + "\n");
         }
+    }
+
+    public static void writeTable() throws IOException {
+        File fs = new File("TableComparison.txt");
+        BufferedWriter salida = new BufferedWriter(new FileWriter(fs));
+        try{
+            for(int i=0; i<finaltable.size(); i++) {
+                salida.write(finaltable.get(i).getIndex() + "\t" + finaltable.get(i).getid1() + "\t" + finaltable.get(i).getid2() + "\t" + finaltable.get(i).getcoefftanimoto() + "\n");
+            }
+        }
+        catch(IOError e) {
+            e.printStackTrace();
+        }
+        salida.close();
+
     }
 
     public static int numberElements(ArrayList<Elements> result) {
