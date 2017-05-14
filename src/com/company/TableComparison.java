@@ -4,50 +4,50 @@ package com.company;
  * Created by santiago on 14/5/17.
  */
 public class TableComparison {
-    private String index;
-    private String key1;
-    private String key2;
-    private String coefftanimoto;
+    private int index;
+    private String id1;
+    private String id2;
+    private float coefftanimoto;
 
-    public TableComparison(String index, String key1, String key2, String coefftanimoto) {
+    public TableComparison(int index, String id1, String id2, float coefftanimoto) {
         this.index = index;
-        this.key1 = key1;
-        this.key2 = key2;
+        this.id1 = id1;
+        this.id2 = id2;
         this.coefftanimoto = coefftanimoto;
     }
 
     public TableComparison() {
     }
 
-    public String getIndex() {
+    public int getIndex() {
         return index;
     }
 
-    public String getKey1() {
-        return key1;
+    public String getid1() {
+        return id1;
     }
 
-    public String getKey2() {
-        return key2;
+    public String getid2() {
+        return id2;
     }
 
-    public String getcoefftanimoto() {
+    public float getcoefftanimoto() {
         return coefftanimoto;
     }
 
-    public void setIndex(String index) {
+    public void setIndex(int index) {
         this.index = index;
     }
 
-    public void setKey1(String key1) {
-        this.key1 = key1;
+    public void setid1(String id1) {
+        this.id1 = id1;
     }
 
-    public void setKey2(String key2) {
-        this.key2 = key2;
+    public void setid2(String id2) {
+        this.id2 = id2;
     }
 
-    public void setcoefftanimoto(String coefftanimoto) {
+    public void setcoefftanimoto(float coefftanimoto) {
         this.coefftanimoto = coefftanimoto;
     }
 }

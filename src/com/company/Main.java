@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         Tanimoto tan = new Tanimoto();
+        tan.prinTable();
     }
 }
 

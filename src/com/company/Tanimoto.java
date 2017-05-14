@@ -12,20 +12,35 @@ public class Tanimoto {
     public static ArrayList<String>datos2;
     public static ArrayList<Elements>result;
     public static ArrayList<Elements>result2;
+    public static ArrayList<TableComparison>finaltable;
 
     public Tanimoto() throws FileNotFoundException {
         int cont=0;
         float temTani=0;
         Data dat = new Data();
+        TableComparison aux;
+        finaltable = new ArrayList<TableComparison>();
         for(int i=1;i<7;i++) {
             for (int j=i;j<7;j++) {
                 // System.out.print("\nEl coeficiente es:");
                 cont+=1;
                 temTani=completeTanimoto(datos, datos2, dat.alldata.get(i).getSmile(), dat.alldata.get(j).getSmile(), result, result2);
                 if (temTani>=0.5) {
-                    System.out.println(cont + "\t" + dat.alldata.get(i).getId() + "\t" + dat.alldata.get(j).getId() + "\t" + temTani);
+                    aux = new TableComparison();
+                    aux.setIndex(cont);
+                    aux.setid1(dat.alldata.get(i).getId());
+                    aux.setid2(dat.alldata.get(j).getId());
+                    aux.setcoefftanimoto(temTani);
+                    finaltable.add(aux);
+                    //System.out.println(cont + "\t" + dat.alldata.get(i).getId() + "\t" + dat.alldata.get(j).getId() + "\t" + temTani);
                 }
             }
+        }
+    }
+
+    public static void prinTable() {
+        for(int i=0; i<finaltable.size(); i++) {
+            System.out.print(finaltable.get(i).getIndex() + "\t" + finaltable.get(i).getid1() + "\t" + finaltable.get(i).getid2() + "\t" + finaltable.get(i).getcoefftanimoto() + "\n");
         }
     }
 
