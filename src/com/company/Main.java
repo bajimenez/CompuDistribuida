@@ -14,14 +14,19 @@ public class Main {
         int Na,Nb,Nc;
         //String cadena1="CCCCCC(=O)O[C@@H]1[C@@H](OC(=O)/C(=C\\C)/C)C(=C2[C@H]1[C@@](C)(OC(=O)C)C[C@@H]([C@]1([C@H]2OC(=O)[C@@]1(C)O)O)OC(=O)CCC)C";
         //String cadena2="CCCCCCCC(=O)O[C@@H]1[C@@H](OC(=O)/C(=C\\C)/C)C(=C2[C@H]1[C@@](C)(OC(=O)C)C[C@@H]([C@]1([C@H]2OC(=O)[C@@]1(C)O)O)OC(=O)CCC)C";
-        System.out.println("Chem_ID_1\t\tChem_ID_2\t\tTanimoto_similarity");
-
+        System.out.println("\tChem_ID_1\t\tChem_ID_2\t\tTanimoto_similarity");
+        int cont=0;
+        float temTani=0;
         Data dat = new Data();
         for(int i=1;i<1300;i++) {
-            for (int j=i;j<1300;j++) {
+            for (int j=i;j<12385;j++) {
                 // System.out.print("\nEl coeficiente es:");
-                System.out.println(dat.alldata.get(i).getId() + "\t" + dat.alldata.get(j).getId() + "\t" + completeTanimoto(datos, datos2, dat.alldata.get(i).getSmile(), dat.alldata.get(j).getSmile(), result, result2));
-            }
+                cont+=1;
+                temTani=completeTanimoto(datos, datos2, dat.alldata.get(i).getSmile(), dat.alldata.get(j).getSmile(), result, result2);
+                if (temTani>=0.5) {
+                    System.out.println(cont + "\t" + dat.alldata.get(i).getId() + "\t" + dat.alldata.get(j).getId() + "\t" + temTani);
+                }
+                }
         }
 
 
