@@ -35,13 +35,21 @@ public class Data
                 aux.setSmile(tokens.nextToken());
                 alldata.add(aux);
 
-                System.out.println("arreglo: " + alldata.get(i).getIndex());
-                System.out.println("Smiles: " + alldata.get(i).getSmile());
+               // System.out.println("arreglo: " + alldata.get(i).getIndex());
+                //System.out.println("Smiles: " + alldata.get(i).getSmile());
 
                 i++;
             }
         } catch (IOException ex) {
             Logger.getLogger(Data.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public ArrayList<Chemicals> getAlldata() {
+        return alldata;
+    }
+
+    public void setAlldata(ArrayList<Chemicals> alldata) {
+        this.alldata = alldata;
     }
 }
